@@ -3,6 +3,8 @@ package chat
 import (
 	"net/http"
 
+	"github.com/ganselmo/go-book-store-api/internal/service/author"
+	"github.com/ganselmo/go-book-store-api/internal/service/book"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,12 +23,13 @@ type httpService struct {
 	endpoints []*endpoint
 }
 
-func NewHTTPtransport(s Service) HTTPService {
-	endpoints := makeEndpoints(s)
+func NewHTTPtransport(sb book.Service, sa author.Service) HTTPService {
+	endpoints := makeBookEndpoints(sa)
+
 	return httpService{endpoints}
 }
 
-func makeEndpoints(s Service) []*endpoint {
+func makeBookEndpoints(s book.Service) []*endpoint {
 	list := []*endpoint{}
 
 	list = append(list, &endpoint{
