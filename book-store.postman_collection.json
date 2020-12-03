@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "4287968a-bc0e-401a-9cf1-f82af239b5a0",
+		"name": "book-store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All books ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "A book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}books/1",
+					"host": [
+						"{{url}}books"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save a Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Name\":\"T123123est\",\n\t    \"Description\" :\"Un Libro Lindo de leer\",\n\t    \"Rating\":2,\n\t    \"Pages\":123,\n\t    \"Author\":\"23\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}books",
+					"host": [
+						"{{url}}books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit a Book",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Name\":\"1\",\n\t    \"Description\" :\"Un Libro Lindo de leer\",\n\t    \"Rating\":2,\n\t    \"Pages\":123,\n\t    \"Author\":\"Gero\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}books/1",
+					"host": [
+						"{{url}}books"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}books/1",
+					"host": [
+						"{{url}}books"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
